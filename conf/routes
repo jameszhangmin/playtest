@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+######  THIS IS MY DEMO ROUTES BELOW
+GET		/mytest						controllers.BookController.index()
+GET		/mytest/ajax_list			controllers.BookController.ajax_list()
+GET		/mytest/render_get			controllers.BookController.render_get()
+POST	/mytest/render_post			controllers.BookController.render_post()
+
+GET		/mytest/book/add			controllers.BookController.add()
+POST	/mytest/book/add			controllers.BookController.add_submit()

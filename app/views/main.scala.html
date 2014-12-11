@@ -1,0 +1,34 @@
+@(title: String)(content: Html)
+
+<!DOCTYPE html>
+
+<html lang="en">
+@*
+这是一句scala模板的注释，且不会被编译器解读
+下面一句表示import了header的模板，可以源自于header.scala.html
+*@
+    @head(title)
+    <body>
+    	@header()
+    	
+    	<div class="container" id="content">
+@*
+以下是引入页面的主内容
+*@
+    		@content
+      	</div>
+    	
+    	<div class="modal" id="waitingDialog">
+			<div class="modal-dialog">
+		      <div class="modal-content">
+		        <div class="modal-body">
+		          	<div class="progress progress-striped active">
+  						<div class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+  						</div>
+					</div>
+		        </div>
+		      </div>
+		    </div>
+		</div>
+    </body>
+</html>
